@@ -1,4 +1,50 @@
+package org.example;
+import java.util.Scanner;
 class Pattern{
+    public void squarePattern(int n) {
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j <= n; j++) {
+                System.out.print("*"+" ");
+            }
+            System.out.println();
+        }
+    }
+    public void rectangleTriangle(int n){
+        for(int i=0;i<n;i++){
+            for(int j=0;j<=i;j++){
+                System.out.print("*"+" ");
+            }
+            System.out.println();
+        }
+    }
+    public void patternA(int n){
+        int value=1;
+        for(int i=1;i<=n;i++){
+            value=i%2!=0?1:0;
+            for(int j=1;j<=i;j++){
+                System.out.print(value+" ");
+                value=value==0?1:0;
+            }
+            System.out.println();
+        }
+    }
+    public void patternB(int n){
+        for(int i=1;i<=n;i++) {
+            for (int j = 1; j <= n - i + 1; j++) {
+                System.out.print("*" + " ");
+            }
+            for (int j = 1; j<i; j++) {
+                System.out.print("_"+" ");
+            }
+            for (int j = 2; j<i; j++) {
+                System.out.print("_"+" ");
+            }
+            for(int j=1;j<=n-i+1;j++){
+                System.out.print("*"+" ");
+            }
+            System.out.println();
+        }
+    }
     void patternF(int n){
         System.out.println("PatternF:");
         for(int i=1;i<=n;i++){
@@ -26,7 +72,7 @@ class Pattern{
     void patternH(int n){
         System.out.println("PatternH:");
         for(int i=1;i<=n;i++){
-            for(int j=n;j<=n-i;j++){
+            for(int j=1;j<=n-i;j++){
                 System.out.print(" "+" ");
             }
             for(int k=1;k<=(i*2)-1;k++){
@@ -41,8 +87,67 @@ class Pattern{
             for(int j=1;j<=i-1;j++){
                 System.out.print(" "+" ");
             }
-            for(int k=1;k<=(n*2)-i;k++){
+            for(int k=1;k<=(n-i)*2+1;k++){
                 System.out.print("*"+" ");
+            }
+            System.out.println();
+        }
+    }
+    void patternJ(int n) {
+        System.out.println("PatternJ:");
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" " + " ");
+            }
+            for (int k = 1; k <= (i * 2) - 1; k++) {
+                System.out.print("*" + " ");
+            }
+            System.out.println();
+        }
+        for (int i = 2; i <= n; i++) {
+            for (int j = 1; j <=i-1; j++) {
+                System.out.print(" " + " ");
+            }
+            for (int k = 1; k <=(n-i)*2+1; k++) {
+                System.out.print("*" + " ");
+            }
+            System.out.println();
+        }
+    }
+    void patternK(int n) {
+        System.out.println("PatternK:");
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <=i-1; j++) {
+                System.out.print(" " + " ");
+            }
+            for (int k = 1; k <=(n-i)*2+1; k++) {
+                System.out.print("*" + " ");
+            }
+            System.out.println();
+        }
+        for (int i = 2; i <= n; i++) {
+            for (int j = 1; j <= n - i; j++) {
+                System.out.print(" " + " ");
+            }
+            for (int k = 1; k <= (i * 2) - 1; k++) {
+                System.out.print("*" + " ");
+            }
+            System.out.println();
+        }
+    }
+    void patternL(int n){
+        System.out.println("PatternL:");
+        for(int i=1;i<=n;i++){
+            for(int j=1;j<=n-i;j++){
+                System.out.print(" "+" ");
+            }
+            for(int k=1;k<=(i*2)-1;k++) {
+                if(k==1 || k==(i*2)-1|| n==i){
+                    System.out.print("*"+" ");
+                }
+                else{
+                    System.out.print("  ");
+                }
             }
             System.out.println();
         }
@@ -50,10 +155,9 @@ class Pattern{
 }
 public class Main {
     public static void main(String[] args) {
-       Pattern p=new Pattern();
-       p.patternF(5);
-       p.patternG(5);
-       p.patternH(5);
-       p.patternI(5);
+            Scanner sc=new Scanner(System.in);
+            int a=5;
+            Pattern p=new Pattern();
+            p.patternL(a);
         }
     }
